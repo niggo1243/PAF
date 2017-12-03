@@ -1,9 +1,9 @@
-package quizServer.dbModel;
+package main.quizServer.dbModel;
 
 import javax.persistence.*;
 
 
-public class baseDBmodel
+public class BaseDBmodel
 {
     @GeneratedValue
     @Id

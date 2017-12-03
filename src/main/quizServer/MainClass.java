@@ -1,4 +1,4 @@
-package quizServer;
+package main.quizServer;
 
 import com.sun.net.httpserver.HttpsServer;
 
@@ -21,7 +21,7 @@ public final class MainClass
         {
             //instantiate the socketAdress
             InetSocketAddress inetSocketAddress = new InetSocketAddress(defaultIpAdress, defaultPort);
-            //create and start the quizServer
+            //create and start the main.quizServer
             HttpsServer quizServer = HttpsServer.create(inetSocketAddress, defaultBackLog);
             quizServer.start();
 
