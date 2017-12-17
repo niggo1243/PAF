@@ -1,8 +1,9 @@
-import org.testng.annotations.Test;
-import org.testng.Assert;
+
 
 import main.quizServer.DbManager;
 import main.quizServer.dbModel.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 public class DbManagerTestClass
 {
@@ -13,6 +14,7 @@ public class DbManagerTestClass
 
         QuizUser user = (QuizUser)manager.getEntityWithId(new QuizUser(), 1);
 
-        Assert.assertEquals(user.name, "john");
+        Assertions.assertNotNull(manager);
+        Assertions.assertEquals(user.getName(), "john");
     }
 }

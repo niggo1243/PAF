@@ -24,14 +24,14 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes>
-      <connection connection-id="464e7110-0c31-479f-a1a3-ca25b12e0c71">
+      <connection connection-id="86369db2-1267-44fe-bb56-192b53735761">
         <schema name="mydb" object-types="table, view" />
       </connection>
     </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="464e7110-0c31-479f-a1a3-ca25b12e0c71">
-      <console name="NikoMySql" type="STANDARD"><![CDATA[select * from mydb.user;]]></console>
+    <connection id="86369db2-1267-44fe-bb56-192b53735761">
+      <console name="Niko" type="STANDARD"><![CDATA[select * from mydb.`user`;]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
@@ -57,10 +57,10 @@
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="464e7110-0c31-479f-a1a3-ca25b12e0c71" active="true">
+      <connection id="86369db2-1267-44fe-bb56-192b53735761" active="true">
         <database>
-          <name value="NikoMySql" />
-          <description value="" />
+          <name value="Niko" />
+          <description value="mysql" />
           <database-type value="MYSQL" />
           <config-type value="BASIC" />
           <database-version value="5.7" />
@@ -448,7 +448,7 @@
         <debug-execution-timeout value="600" />
         <focus-result value="false" />
         <prompt-execution value="false" />
-        <target-connection value="MAIN" />
+        <target-connection value="ASK" />
       </statement-execution>
       <script-execution>
         <command-line-interfaces />

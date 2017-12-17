@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jbosssx-client-4.2.3.GA">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jbosssx-client-4.2.3.GA.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

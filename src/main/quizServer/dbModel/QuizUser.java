@@ -1,10 +1,21 @@
 package main.quizServer.dbModel;
 
-import javax.persistence.*;
-
-@Entity(name = "user")
 public class QuizUser extends BaseDBmodel
 {
-    @Column(nullable = false)
-    public String password;
+    private String password;
+
+    public QuizUser()
+    {
+
+    }
+
+    public String getPassword()
+    {
+        return this.password;
+    }
+
+    public void setPassword(String password)
+    {
+        this.password = password;
+    }
 }
