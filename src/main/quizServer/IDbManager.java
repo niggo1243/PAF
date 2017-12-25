@@ -4,5 +4,5 @@ import main.quizServer.dbModel.*;
 
 public interface IDbManager
 {
-    public BaseDBmodel getEntityWithId(BaseDBmodel dbModelType, long id);
+    public BaseDBmodel getEntityWithId(BaseDBmodel dbModelType, int id);
 }

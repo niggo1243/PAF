@@ -5,6 +5,7 @@ import com.sun.net.httpserver.HttpsServer;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 
+
 public final class MainClass
 {
     public static final String serverRootUri = "https://localhost:8080/";
@@ -19,10 +20,13 @@ public final class MainClass
 
         try
         {
+
+
             //instantiate the socketAdress
             InetSocketAddress inetSocketAddress = new InetSocketAddress(defaultIpAdress, defaultPort);
             //create and start the main.quizServer
             HttpsServer quizServer = HttpsServer.create(inetSocketAddress, defaultBackLog);
+
             quizServer.start();
 
             System.out.println("Hit any key, to close the server: ");

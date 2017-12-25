@@ -6,19 +6,20 @@ import javax.persistence.EntityManagerFactory;
 
 import org.hibernate.*;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.exception.ConstraintViolationException;
 
 import java.io.Serializable;
 
 public class DbManager extends SingletonInstance implements IDbManager
 {
+    private SessionFactory sessionFactory;
+
     //make a private constructor, so only this class can instantiate this object
     private DbManager()
     {
         System.out.println("instantiating the DbManager");
-
+        this.sessionFactory = new Configuration().configure().buildSessionFactory();
     }
-
-    private EntityManagerFactory entityManagerFactory;
 
     public static SingletonInstance getInstance()
     {
@@ -30,37 +31,74 @@ public class DbManager extends SingletonInstance implements IDbManager
         return instance;
     }
 
-    public BaseDBmodel getEntityWithId(BaseDBmodel dbModelType, long id)
+    public BaseDBmodel getEntityWithId(BaseDBmodel dbModelType, int id)
     {
-        //EntityManager entityManager = this.entityManagerFactory.createEntityManager();
-        //dbModelType = entityManager.find(dbModelType.getClass(), id);
-
-        Configuration config = new Configuration();
             try
             {
                 // This step will read hibernate.cfg.xml and prepare hibernate for use
-                SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-                Session session = sessionFactory.openSession();
-                Transaction tx = session.beginTransaction();
+                Session session = this.sessionFactory.openSession();
+                session.beginTransaction();
 
-                //Create new instance of Contact and set values in it by reading them from form object
-                System.out.println("Inserting Record");
+                dbModelType = session.get(QuizUser.class, id);
 
-                dbModelType = session.get(QuizUser.class, 1);
+                session.getTransaction().commit();
 
-
-                // Actual contact insertion will happen at this step
-
-                session.flush();
                 session.close();
 
             }
-            catch (InvalidMappingException e)
+            catch (Exception e)
             {
                 e.printStackTrace();
             }
 
 
         return dbModelType;
+    }
+
+    public boolean updateEntity(BaseDBmodel dbModelType)
+    {
+        try
+        {
+            Session session = this.sessionFactory.openSession();
+
+            session.beginTransaction();
+
+            session.update(dbModelType);
+
+            session.getTransaction().commit();
+
+            session.close();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean createEntity(BaseDBmodel dbModelType)
+    {
+        try
+        {
+            Session session = this.sessionFactory.openSession();
+            session.beginTransaction();
+            session.persist(dbModelType);
+
+            session.getTransaction().commit();
+            session.close();
+        }
+        catch (ConstraintViolationException cve)
+        {
+            return false;
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+            return false;
+        }
+
+        return true;
     }
 }

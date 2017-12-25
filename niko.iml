@@ -37,7 +37,6 @@
     <orderEntry type="library" exported="" name="hibernate-core-5.2.12.Final" level="project" />
     <orderEntry type="library" exported="" name="org.jboss.logging:jboss-logging:3.3.1.Final" level="application" />
     <orderEntry type="library" name="jboss-transaction-api_1.2_spec-1.0.1.Final" level="application" />
-    <orderEntry type="library" name="antlr-2.7.7" level="project" />
     <orderEntry type="library" exported="" name="mysql-connector-java-5.1.45-bin" level="project" />
     <orderEntry type="library" name="jbosssx-client-4.2.3.GA" level="project" />
     <orderEntry type="library" name="antlr-2.7.7 (2)" level="project" />
@@ -45,5 +44,8 @@
     <orderEntry type="library" name="jsr173_api-1.0" level="project" />
     <orderEntry type="library" name="jaxb:activation:1.0.2" level="project" />
     <orderEntry type="library" exported="" name="jaxb-api-2.3.0" level="project" />
+    <orderEntry type="library" name="jboss:axis-ws4ee:4.03RC1" level="project" />
+    <orderEntry type="library" name="org.jboss.ws:jbossws-api:1.0.2.Final" level="project" />
+    <orderEntry type="library" name="javax.ws.rs-api-2.0" level="project" />
   </component>
 </module>
